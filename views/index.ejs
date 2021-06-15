@@ -1,0 +1,26 @@
+<%-include("header")-%>
+
+<div class="box" id="heading">
+  <h1> <%= title %></h1>
+</div>
+
+  <div class="box">
+    <ul>
+      <form method="post"  action=  "<%= link %>" >
+          <% list.forEach((item, index) => {%>
+            <div class="item">
+              <input type="checkbox" name="cbox" onchange="this.form.submit()" value= "<%= item %>" >
+              <p><%= item %></p>
+            </div>
+        <% });  %>
+      </form>
+    </ul>
+  </div>
+  <div class="box">
+    <form class="item" method="post" action="<%= link %>">
+      <input type="text" name="list" placeholder="Add Item" autocomplete="off">
+      <button type="submit" name="title">+</button>
+    </form>
+  </div>
+
+<%-include("footer")-%>
